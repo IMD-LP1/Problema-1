@@ -10,6 +10,7 @@
 #include <string>
 #include <vector>
 
+
 void read(std::istream& in, std::vector<std::string> & text) 
 {
 	std::string line;
@@ -19,6 +20,22 @@ void read(std::istream& in, std::vector<std::string> & text)
 
 int main(int argc, char* argv[])
 {
-	// Part 1. Read the entire input 
-
+	// Part 1. Read the entire input into text. If the command line names a file,
+	// read that file. Otherwise, read the standart input.
+	std::vector<std::string> text; ///< Store the lines of text here
+	if(argc < 2)
+		read(std::cin, text);
+	else {
+		std::ifstream in(argv[1]);
+		if (not in)
+		{
+			std::perror(argv[1]);
+			return EXIT_FAILURE;		
+		}
+		read(in, text);
+	}
+	// Part 2. Sort the text.
+	std::sort(text.begin(), text.end())
+	// Part 4. Print the sorted text.
+	std::copy(text.begin(), text.end()), std::ostream_iterator<std::string>(std::cout, "\n"));
 }
