@@ -14,7 +14,7 @@
 void read(std::istream& in, std::vector<std::string> & text) 
 {
 	std::string line;
-	while (std::getline(in, line)
+	while (std::getline(in, line))
 		text.push_back(line);
 }
 
@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
 		read(in, text);
 	}
 	// Part 2. Sort the text.
-	std::sort(text.begin(), text.end())
+	std::sort(text.begin(), text.end());
 	// Part 4. Print the sorted text.
-	std::copy(text.begin(), text.end()), std::ostream_iterator<std::string>(std::cout, "\n"));
+	std::copy(text.begin(), text.end(), std::ostream_iterator<std::string>(std::cout, "\n"));
 }

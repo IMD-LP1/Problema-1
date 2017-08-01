@@ -2,7 +2,7 @@
 /** Listing 2-3. Determining the numver of Bits in a bool. */
 #include <iostream>
 #include <limits>
-#include <ostram>
+#include <ostream>
 
 int main()
 {
