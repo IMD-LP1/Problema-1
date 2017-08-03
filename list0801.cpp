@@ -6,10 +6,11 @@
 
 int main()
 {
-	std::cout << " N	N^2		N^3\n";
+	std::cout << " N	N^2	N^3\n";
 	for(int i = 1; i != 21; ++i)
 	{
 		// fill in the lop body here
+		std::cout << i << "\t" << i * i << "\t" << i * i * i << std::endl;
 	}
 }
 
